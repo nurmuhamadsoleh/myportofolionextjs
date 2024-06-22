@@ -1,3 +1,40 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier" //agar configurasi prettier bisa di baca eslint
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json" //Parsenya menggunakan tsconfig karena menggunakan typescript
+  },
+  "plugins": ["@typescript-eslint"],
+  "ignorePatterns": [
+    "**/build/*",
+    "**/node_modules/*",
+    "**/.next/*",
+    "**/dist/*",
+    "**/public/*"
+  ], //jadi eslint ignore tidak akan membaca folder yang di masukan di dalam array
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off", //Cek return type fungsi karena menggunakan typescript, jika tidak ada return type fungsi, jangan lupa tambahkan off
+    "react/react-in-jsx-scope": "off", //Cek scope react karena menggunakan typescript
+    "no-undef": "error",
+    "camelcase": "error", // Cek camelcase
+    "prefer-const": "error", //Cek prefer const karena menggunakan typescript, dimana sebuha variabel yang tidak di assigen ulang menggunakan const
+    "no-console": "error",
+    "no-unused-vars": [
+      "error", //Jika Ada Variabel yang Tidak Digunakan
+      {
+        "vars": "all", //Semua Variabel
+        "args": "after-used", //Memeriksa Parameter yang tidak di gunakan pada function
+        "ignoreRestSiblings": false, //Memeriksa spreed operator yang tidak digunakan
+        "argsIgnorePattern": "^_" //Mengabaikan parameter fungsi yang namanya dimulai dengan _.
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect" //Cek versi React yang digunakan
+    }
+  }
 }
