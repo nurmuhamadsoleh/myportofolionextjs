@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-export default function Home(): React.ReactNode {
-  console.log('hello')
+
+export default function Home() {
   const dataLagi = 10
 
   return (

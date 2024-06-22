@@ -17,7 +17,7 @@
   ], //jadi eslint ignore tidak akan membaca folder yang di masukan di dalam array
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off", //Cek return type fungsi karena menggunakan typescript, jika tidak ada return type fungsi, jangan lupa tambahkan off
-    "react/react-in-jsx-scope": "off", //Cek scope react karena menggunakan typescript
+    "react/react-in-jsx-scope": "error", //Cek scope react karena menggunakan typescript
     "no-undef": "error",
     "camelcase": "error", // Cek camelcase
     "prefer-const": "error", //Cek prefer const karena menggunakan typescript, dimana sebuha variabel yang tidak di assigen ulang menggunakan const
