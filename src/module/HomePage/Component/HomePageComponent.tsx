@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef } from 'react'
 
 import DownArrow from '../../../assets/image/down_arrow.png'
 import EDesa from '../../../assets/image/E-Desa.png'
@@ -21,7 +21,7 @@ export default function HomePageComponent() {
   const hamburger: any = useRef<any>()
   const navbarHeader: any = useRef<any>()
   const navMenu: any = useRef<any>()
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Navbar fixed
 
     const currentHamburger = hamburger.current
@@ -42,7 +42,7 @@ export default function HomePageComponent() {
       }
     }
   }, [])
-  useEffect(() => {
+  useLayoutEffect(() => {
     const handleScroll = () => {
       const currentNavbarHeader = navbarHeader.current
       const headerOffsetTop = currentNavbarHeader.offsetTop
@@ -230,14 +230,21 @@ export default function HomePageComponent() {
                 Yuk, Kenalan Dengan Saya
               </h2>
               <p className="text-secondary text-base font-medium max-w-xl lg:text-lg text-justify">
-                Dengan latar belakang pendidikan S1 Teknik Informatika, memiliki
-                pengalaman sebagai Frontend Developer selama kurang lebih 3
-                tahun khususnya dalam pengembangan aplikasi berbasis web dengan
-                menggunakan teknologi React JS, Nextjs dan juga TypeScript untuk
-                desain sistem menggunakan Antd, Tailwinds, Bootstrap dan css in
-                processor seperti sass atau scss memiliki ketertarikan karir
-                sebagai spesialis frontend developer yang sangat sesuai dengan
-                pengalaman dan pendidikan saat ini.
+                Seorang frontend developer dengan latar belakang pendidikan S1
+                Teknik Informatika yang baru lulus pada tahun 2024 dari Sekolah
+                Tinggi Informatika Areta, dengan IPK 3,31. Berpengalaman 3 tahun
+                di bidang Web dan SEO (Search Engine Optimization) dengan
+                spesialisasi pada aplikasi pengembangan aplikasi dan pemasaran
+                digital dengan teknologi javascript, reactjs, nextjs, typescript
+                dan GSC (Google Search Console) untuk desain sistem menggunakan
+                Antd, Tailwinds, Bootstrap dan css processor seperti sass atau
+                scss dan telah berhasil membangun aplikasi kasir optical99k
+                selama 3 bulan dengan teknologi nextjs dan juga typescript dan
+                telah berhasil menerapkan SEO sebesar 100% dalam 2 bulan di
+                website genbox.id dengan kata kunci apa itu genbox, Terbiasa
+                terbiasa bekerja dengan tim dan memiliki kemampuan problem
+                solving dalam menyelesaikan tantangan dalam pengembangan
+                aplikasi dan implementasi digital marketing.
               </p>
             </div>
             <div className="w-full px-4 lg:w-1/2">
