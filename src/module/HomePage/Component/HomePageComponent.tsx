@@ -15,6 +15,8 @@ import SEOWEB from '../../../assets/image/SEO_WEB.jpg'
 import SugitIntiPerkasa from '../../../assets/image/Sugi_Inti_Perkasa.png'
 import Xhalona from '../../../assets/image/Xhalona.png'
 import { useRouter } from 'next/navigation'
+import WebsitePTDIKA from '../../../assets/image/website pt_dika.png'
+import CMSPTDIKA from '../../../assets/image/cmspt_dika.png'
 
 export default function HomePageComponent() {
   const router = useRouter()
@@ -60,6 +62,7 @@ export default function HomePageComponent() {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
   return (
     <>
       {/* Header Start */}
@@ -167,9 +170,11 @@ export default function HomePageComponent() {
                 </span>
               </h1>
               <h2 className="font-medium text-secondary text-lg mb-5 lg:text-3xl">
-                Frontend Web Developer{' '}
+                Spesialis Frontend Web Developer & SEO (Search Engine
+                Optimization){' '}
                 <span className="text-dark">
-                  | React Js / Next Js / Typescript
+                  | React Js / Next Js / Typescript | Fresh Graduate Teknik
+                  Informatika S1 Areta Informatics College
                 </span>
               </h2>
               <p className="font-medium text-secondary mb-5 leading-relaxed">
@@ -230,21 +235,19 @@ export default function HomePageComponent() {
                 Yuk, Kenalan Dengan Saya
               </h2>
               <p className="text-secondary text-base font-medium max-w-xl lg:text-lg text-justify">
-                Seorang frontend developer dengan latar belakang pendidikan S1
-                Teknik Informatika yang baru lulus pada tahun 2024 dari Sekolah
-                Tinggi Informatika Areta, dengan IPK 3,31. Berpengalaman 3 tahun
-                di bidang Web dan SEO (Search Engine Optimization) dengan
-                spesialisasi pada aplikasi pengembangan aplikasi dan pemasaran
-                digital dengan teknologi javascript, reactjs, nextjs, typescript
-                dan GSC (Google Search Console) untuk desain sistem menggunakan
-                Antd, Tailwinds, Bootstrap dan css processor seperti sass atau
-                scss dan telah berhasil membangun aplikasi kasir optical99k
-                selama 3 bulan dengan teknologi nextjs dan juga typescript dan
-                telah berhasil menerapkan SEO sebesar 100% dalam 2 bulan di
-                website genbox.id dengan kata kunci apa itu genbox, Terbiasa
-                terbiasa bekerja dengan tim dan memiliki kemampuan problem
-                solving dalam menyelesaikan tantangan dalam pengembangan
-                aplikasi dan implementasi digital marketing.
+                Saya adalah lulusan baru dengan gelar Sarjana Teknik Informatika
+                dari STMIK Masa Depan, dengan IPK 3.57. Saya memiliki pengalaman
+                sekitar empat tahun sebagai Frontend Developer dan praktisi
+                Pemasaran Digital, khususnya dalam pengembangan aplikasi web
+                menggunakan React.js, Next.js, dan TypeScript. Saya
+                berpengalaman dalam mendesain antarmuka pengguna menggunakan Ant
+                Design, Tailwind CSS, Bootstrap, serta preprocessor CSS seperti
+                SASS dan SCSS. Selain itu, saya memiliki pengetahuan dan
+                pengalaman praktis dengan alat pemasaran digital termasuk
+                Ubersuggest, Ahrefs, Google Search Console, Google Analytics,
+                dan Keywordtools.io. Saya sangat tertarik untuk mengejar karir
+                di bidang IT dan Pemasaran Digital, didukung oleh latar belakang
+                pendidikan dan pengalaman profesional saya.
               </p>
             </div>
             <div className="w-full px-4 lg:w-1/2">
@@ -475,6 +478,64 @@ export default function HomePageComponent() {
                 fitur seperti menu finance yang dapat mengontrol cash Xalon,
                 pada project kali ini kami bekerja sama menggunakan github
                 sebagai version control untuk memudahkan pengelolaan project. .
+              </p>
+            </div>
+            <div className="mb-8 p-4 md:w-1/2">
+              {/* Overflow hidden supaya tidak bablas / hidden scroll  */}
+              <div className="rounded-md shadow-md overflow-hidden">
+                <Link href={'https://ptdika.com/'} target="_blank">
+                  <Image
+                    src={WebsitePTDIKA}
+                    alt="Website PT. DIKA (Danamas Insan Kreasi Andalan)"
+                    className="max-w-full"
+                  />
+                </Link>
+              </div>
+              <Link href={'http://dev-01.core-erp.com:60125/'} target="_blank">
+                <h3 className="font-semibold text-md md:text-xl text-dark mt-5 mb-3 hover:text-primary">
+                  Website Company Profile PT. DIKA (Danamas Insan Kreasi
+                  Andalan)
+                </h3>
+              </Link>
+
+              <p className="font-medium text-base text-secondary text-justify">
+                Merupakan website yang saat ini dikelola oleh PT. DIKA sebagai
+                wadah untuk branding profile perusahaan PT DIKA dengan berfokus
+                pada bisnis sales dan operation outsourcing. Pada project ini
+                saya melakukan development dari awal mulai slicing UI,
+                integration API, dan juga menyusun struktur dalam penerapan SEO
+                (Search Engine Optimation) agar bisa di update secara berkala
+                dengan menggunakan web administrator CMS (Content Manangement
+                Sistem) dalam proses development 1,5 bulan dengan menggunakan
+                TechStack Nextjs, Typescript, Tanstack Query (Integration API),
+                React Hooks From (Validation From).
+              </p>
+            </div>
+            <div className="mb-8 p-4 md:w-1/2">
+              {/* Overflow hidden supaya tidak bablas / hidden scroll  */}
+              <div className="rounded-md shadow-md overflow-hidden">
+                <Link href={'https://ptdika.com/'} target="_blank">
+                  <Image
+                    src={CMSPTDIKA}
+                    alt="CMS PT. DIKA (Danamas Insan Kreasi Andalan)"
+                    className="max-w-full"
+                  />
+                </Link>
+              </div>
+              <Link href={'http://dev-01.core-erp.com:60125/'} target="_blank">
+                <h3 className="font-semibold text-md md:text-xl text-dark mt-5 mb-3 hover:text-primary">
+                  CMS PT. DIKA (Danamas Insan Kreasi Andalan)
+                </h3>
+              </Link>
+
+              <p className="font-medium text-base text-secondary text-justify">
+                CMS (Content Management Sistem) merupakan website administrator
+                untuk melakukan update content artikel bolg dan juga SEO pada
+                website company profile PT. DIKA, Pada project ini saya
+                melakukan development dari awal mulai scling UI, Blast Email
+                (SMTP), struktur folder dan juga flow bisnis nya dalam proses
+                developement 1,5 bulan dengan menggunakan codeigniter versi 3,
+                MYSQL, dan PHP.
               </p>
             </div>
           </div>
