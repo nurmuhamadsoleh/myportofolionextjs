@@ -547,16 +547,16 @@ export default function HomePageComponent() {
           <div className="w-full px-4">
             <div className="mx-auto text-center mb-16">
               <h3 className="font-semibold text-lg text-primary mb-2 md:text-4xl">
-                Clients
+                Clients & Projects
               </h3>
               <h2 className="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl">
-                Yang Pernah Bekerjasama
+                Dipercaya oleh Berbagai Perusahaan
               </h2>
               <p className="font-medium text-lg text-secondary md:text-lg">
-                Saya bekerja sama dengan tim PT. Jala Informatika, PT.
-                Laboratorium Komputer, Dan Juga Infernous Studio selama kurang
-                lebih 3 Tahun, Berikut adalah beberapa client yang pernah
-                bekerja sama
+                Sebagai Frontend Developer dengan pengalaman lebih dari 4 tahun,
+                saya telah berkontribusi dalam pengembangan aplikasi berbasis
+                React.js, Next.js, dan TypeScript untuk berbagai perusahaan dan
+                kebutuhan bisnis.
               </p>
             </div>
           </div>
