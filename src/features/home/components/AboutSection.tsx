@@ -11,7 +11,7 @@ export default function AboutSection() {
     <section className="pb-32 pt-36" id="about">
       <div className="container">
         <div className="flex flex-wrap">
-          <div className="mb-10 w-full px-4 lg:w-1/2">
+          <div className="gsap-reveal mb-10 w-full px-4 lg:w-1/2">
             <p className="mb-3 text-lg font-bold uppercase text-primary">
               Tentang Saya
             </p>
@@ -49,7 +49,7 @@ export default function AboutSection() {
               bisnis yang nyata.
             </p>
           </div>
-          <div className="flex w-full justify-center px-4 text-center lg:w-1/2">
+          <div className="gsap-reveal flex w-full justify-center px-4 text-center lg:w-1/2">
             <div className="flex w-full max-w-[420px] flex-col items-center lg:pt-10">
               <h3 className="mb-4 text-2xl font-semibold text-dark lg:text-3xl">
                 Mari Berteman Dengan Saya

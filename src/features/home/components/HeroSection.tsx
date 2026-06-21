@@ -12,7 +12,7 @@ export default function HeroSection() {
     <section className="pt-36" id="home">
       <div className="container">
         <div className="flex flex-wrap">
-          <div className="w-full self-start px-4 lg:w-1/2">
+          <div className="gsap-hero-copy w-full self-start px-4 lg:w-1/2">
             <h1 className="text-base font-semibold text-primary md:text-xl">
               Hallo Semua,
               <span className="block text-2xl font-bold text-dark lg:text-4xl">
@@ -20,8 +20,8 @@ export default function HeroSection() {
               </span>
             </h1>
             <h2 className="mb-5 text-lg font-medium text-secondary lg:text-3xl">
-              Web Developer | Frontend Developer | SEO Optimization | Building
-              Modern Web Applications
+              Web Developer | Frontend Developer | Reactjs Developer | Mobile
+              Developer | Fullstack Developer
             </h2>
             <p className="mb-5 font-medium leading-relaxed text-secondary">
               Belajar Frontend Developer Web Itu Mudah Dan Menyenangkan{' '}
@@ -36,7 +36,7 @@ export default function HeroSection() {
               Hubungi Saya
             </Link>
           </div>
-          <div className="w-full self-end lg:w-1/2">
+          <div className="gsap-hero-photo w-full self-end lg:w-1/2">
             <div className="relative mt-10 md:mt-0">
               <Image
                 alt="Photo Profile Soleh"

@@ -8,12 +8,12 @@ import { portfolioItems, type PortfolioItem } from '../data/homeData'
 
 function PortfolioCard({ item }: { item: PortfolioItem }) {
   return (
-    <article className="flex h-full flex-col">
+    <article className="gsap-project-card flex h-full flex-col">
       <div className="relative aspect-video overflow-hidden rounded-md shadow-md">
         <Link href={item.href} rel="noopener noreferrer" target="_blank">
           <Image
             alt={item.imageAlt}
-            className="object-cover"
+            className="gsap-project-image object-cover transition duration-500 hover:scale-105"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
             src={item.image}

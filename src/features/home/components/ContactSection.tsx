@@ -7,7 +7,7 @@ export default function ContactSection() {
     <section className="pb-32 pt-36" id="contact">
       <div className="container">
         <div className="w-full px-4">
-          <div className="mx-auto mb-16 max-w-xl text-center">
+          <div className="gsap-reveal mx-auto mb-16 max-w-xl text-center">
             <p className="mb-2 text-lg font-semibold text-primary md:text-4xl">
               Contact
             </p>

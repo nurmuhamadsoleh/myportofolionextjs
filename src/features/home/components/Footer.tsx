@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-dark pb-10 pt-20">
       <div className="container">
         <div className="grid gap-10 px-4 md:grid-cols-3 md:gap-16 lg:gap-24">
-          <div className="font-medium text-slate-300">
+          <div className="gsap-reveal font-medium text-slate-300">
             <h2 className="mb-5 text-xl font-bold leading-tight text-white md:text-2xl">
               Nur Muhammad Soleh
             </h2>
@@ -26,7 +26,7 @@ export default function Footer() {
               <p>Jakarta Barat</p>
             </div>
           </div>
-          <div>
+          <div className="gsap-reveal">
             <h3 className="mb-5 text-lg font-semibold leading-tight text-white md:text-xl">
               Kategori Blog
             </h3>
@@ -45,7 +45,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <div>
+          <div className="gsap-reveal">
             <h3 className="mb-5 text-lg font-semibold leading-tight text-white md:text-xl">
               Tautan
             </h3>
@@ -63,7 +63,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-14 w-full border-t border-slate-700 px-4 pt-8">
+        <div className="gsap-reveal mt-14 w-full border-t border-slate-700 px-4 pt-8">
           <div className="mb-6 flex items-center justify-center gap-5">
             {socialItems.map((item) => (
               <SocialLink

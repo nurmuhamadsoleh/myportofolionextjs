@@ -1,36 +1,258 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Setup Google Sheets API untuk Contact Form
 
-## Getting Started
+Dokumentasi ini menjelaskan cara mengaktifkan Google Sheets API, membuat Service Account, generate JSON Key, dan menghubungkannya ke aplikasi ReactJS / Next.js melalui backend API.
 
-First, run the development server:
+## 1. Buka Google Cloud Console
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Buka halaman:
+
+```txt
+https://console.cloud.google.com/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Pastikan sudah login menggunakan akun Google yang sama dengan project Anda.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 2. Pilih atau Buat Project
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Klik bagian nama project di header Google Cloud, lalu pilih:
 
-## Learn More
+```txt
+New Project
+```
 
-To learn more about Next.js, take a look at the following resources:
+Contoh nama project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```txt
+contact-form-api
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Klik:
 
-## Deploy on Vercel
+```txt
+Create
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 3. Enable Google Sheets API
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Masuk ke halaman API Library:
+
+```txt
+https://console.cloud.google.com/apis/library
+```
+
+Cari:
+
+```txt
+Google Sheets API
+```
+
+Klik **Google Sheets API**, lalu klik:
+
+```txt
+Enable
+```
+
+## 4. Buat Service Account
+
+Masuk ke menu:
+
+```txt
+IAM & Admin
+→ Service Accounts
+```
+
+Atau buka langsung:
+
+```txt
+https://console.cloud.google.com/iam-admin/serviceaccounts
+```
+
+Klik:
+
+```txt
+Create Service Account
+```
+
+Isi data berikut:
+
+```txt
+Service account name: contact-form-api
+Service account ID: otomatis
+Description: Service account untuk integrasi contact form ke Google Sheets
+```
+
+Klik:
+
+```txt
+Create and Continue
+```
+
+Pada bagian role, bisa dilewati terlebih dahulu.
+
+Klik:
+
+```txt
+Done
+```
+
+## 5. Generate JSON Key
+
+Klik service account yang sudah dibuat.
+
+Masuk ke tab:
+
+```txt
+Keys
+```
+
+Klik:
+
+```txt
+Add Key
+→ Create New Key
+```
+
+Pilih:
+
+```txt
+JSON
+```
+
+Klik:
+
+```txt
+Create
+```
+
+File JSON akan otomatis terdownload.
+
+## 6. Ambil Data dari JSON Key
+
+Buka file JSON yang sudah didownload.
+
+Ambil bagian berikut:
+
+```json
+{
+  "client_email": "contact-form-api@project-id.iam.gserviceaccount.com",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END PRIVATE KEY-----\n"
+}
+```
+
+Gunakan `client_email` untuk:
+
+```env
+GOOGLE_SERVICE_ACCOUNT_EMAIL=
+```
+
+Gunakan `private_key` untuk:
+
+```env
+GOOGLE_PRIVATE_KEY=
+```
+
+## 7. Share Spreadsheet ke Service Account
+
+Buka Google Spreadsheet yang ingin digunakan.
+
+Klik:
+
+```txt
+Share / Bagikan
+```
+
+Tambahkan email service account, contoh:
+
+```txt
+contact-form-api@project-id.iam.gserviceaccount.com
+```
+
+Berikan akses:
+
+```txt
+Editor
+```
+
+Klik:
+
+```txt
+Send / Kirim
+```
+
+Tanpa langkah ini, backend akan gagal mengakses spreadsheet dan biasanya muncul error:
+
+```txt
+The caller does not have permission
+```
+
+## 8. Contoh Environment Variable
+
+Buat file `.env` atau `.env.local` di backend:
+
+```env
+GOOGLE_SHEETS_SPREADSHEET_ID=1ZAhfqxp7KiAAN5sDR7aboTpauqnj7eSnMD37eQNOFT0
+GOOGLE_SHEETS_RANGE=Sheet1!A:D
+
+GOOGLE_SERVICE_ACCOUNT_EMAIL=contact-form-api@project-id.iam.gserviceaccount.com
+
+GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END PRIVATE KEY-----\n"
+```
+
+## 9. Catatan Penting
+
+Jangan upload file `.env` atau file JSON key ke GitHub.
+
+Tambahkan ke `.gitignore`:
+
+```gitignore
+.env
+.env.local
+*.json
+```
+
+Untuk deployment di Vercel, masukkan environment variable melalui:
+
+```txt
+Vercel Dashboard
+→ Project
+→ Settings
+→ Environment Variables
+```
+
+Pilih environment:
+
+```txt
+Production
+Preview
+```
+
+Setelah menambahkan env di Vercel, lakukan:
+
+```txt
+Redeploy
+```
+
+## 10. Flow Integrasi
+
+```txt
+ReactJS / Next.js Contact Form
+        ↓
+Backend API
+        ↓
+Google Sheets API
+        ↓
+Google Spreadsheet
+```
+## 11. Tambahkan Script BE untuk googleSheet
+
+## 12. Checklist
+
+* [ ] Google Cloud Project sudah dibuat
+* [ ] Google Sheets API sudah di-enable
+* [ ] Service Account sudah dibuat
+* [ ] JSON Key sudah didownload
+* [ ] Spreadsheet sudah di-share ke email service account
+* [ ] Env sudah ditambahkan di local
+* [ ] Env sudah ditambahkan di Vercel
+* [ ] Sudah redeploy Vercel
+* [ ] Contact form berhasil menyimpan data ke Google Sheets

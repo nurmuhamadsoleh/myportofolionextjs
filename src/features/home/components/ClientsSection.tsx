@@ -19,7 +19,7 @@ export default function ClientsSection() {
           <div className="flex flex-wrap items-center justify-center">
             {clientLogos.map((item) => (
               <div
-                className="mx-5 flex min-h-[120px] w-[170px] items-center justify-center py-4 opacity-95 brightness-110 contrast-125 transition duration-500 hover:scale-105 hover:opacity-100 lg:mx-8 lg:w-[200px] xl:mx-10"
+                className="gsap-card mx-5 flex min-h-[120px] w-[170px] items-center justify-center py-4 opacity-95 brightness-110 contrast-125 transition duration-500 hover:scale-105 hover:opacity-100 lg:mx-8 lg:w-[200px] xl:mx-10"
                 key={item.imageAlt}
               >
                 <Image

@@ -35,7 +35,6 @@ export type PortfolioItem = {
 
 export type BlogItem = {
   title: string
-  href: string
   image: StaticImageData
   imageAlt: string
   description: string
@@ -138,7 +137,6 @@ export const blogItems: BlogItem[] = [
   {
     title:
       'Kenapa ya lowongan kerja frontend developer lebih banyak menggunakan ReactJS?',
-    href: 'https://medium.com/@nurmuhamadsoleh42/kenapa-ya-lowongan-kerja-frontend-developer-lebih-banyak-menggunakan-reactjs-7e9b2f3674ca',
     image: Programming,
     imageAlt: 'ReactJS, VueJS, frontend developer',
     description:
@@ -146,7 +144,6 @@ export const blogItems: BlogItem[] = [
   },
   {
     title: 'Bagaimana Meningkatkan Kualitas Web Menggunakan SEO?',
-    href: 'https://medium.com/@nurmuhamadsoleh42/kenapa-ya-lowongan-kerja-frontend-developer-lebih-banyak-menggunakan-reactjs-7e9b2f3674ca',
     image: SEOWEB,
     imageAlt: 'SEO web',
     description: 'Alasan mengapa seo web bisa meningkatkan kualitas web.',

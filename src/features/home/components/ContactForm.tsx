@@ -64,7 +64,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit(onSubmit)}>
+    <form className="gsap-reveal" noValidate onSubmit={handleSubmit(onSubmit)}>
       <div className="w-full lg:mx-auto lg:w-2/3">
         <div className="mb-8 w-full px-4">
           <label

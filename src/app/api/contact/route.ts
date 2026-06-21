@@ -4,6 +4,8 @@ import { ValidationError } from 'yup'
 import { appendContactToSheet } from '@/lib/googleSheets'
 import { contactSchema } from '@/features/home/schemas/contactSchema'
 
+export const runtime = 'nodejs'
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()

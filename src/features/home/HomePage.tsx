@@ -7,11 +7,13 @@ import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
+import HomeAnimations from './components/HomeAnimations'
 import PortfolioSection from './components/PortfolioSection'
 
 export default function HomePage() {
   return (
     <>
+      <HomeAnimations />
       <Header />
       <main>
         <HeroSection />
